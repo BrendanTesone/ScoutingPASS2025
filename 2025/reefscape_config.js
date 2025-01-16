@@ -5,7 +5,7 @@ var config_data = `
   "page_title": "REEFSCAPE",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "First Name+Last Initial - ex: Ryan D",
       "code": "s",
       "type": "scouter",
       "size": 5,
@@ -22,7 +22,8 @@ var config_data = `
       "code": "l",
       "type": "level",
       "choices": {
-        "qm": "Quals<br>",
+        "p": "Practice<br>",
+		"qm": "Quals<br>",
         "sf": "Semifinals<br>",
         "f": "Finals"
       },
@@ -54,14 +55,6 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
-    },
-    { "name": "Auto Start Position",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2025/field_image.png",
-      "clickRestriction": "one",
-      "allowableResponses": "6 7 18 19 30 31 42 43 54 55 66 67",
-      "shape": "circle 5 black red true"
     }
   ],
   "auton": [
@@ -129,17 +122,9 @@ var config_data = `
         "x": "Not Attempted"
       },
       "defaultValue": "x"
-    },
-    { "name": "Scored in<br>Opponent<br>Processor",
-      "code": "opp",
-      "type": "bool"
     }
   ],
   "endgame": [
-    { "name": "Barge Timer",
-      "code": "ebt",
-      "type": "timer"
-    },
     { "name": "Final Robot Status",
       "code": "efs",
       "type":"radio",
@@ -154,18 +139,8 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Attained Coopertition Pt",
-      "code": "cop",
-      "type": "bool"
-    },
-    { "name": "Algae Left in Reef",
-      "code": "alr",
-      "type": "number",
-      "min": 0,
-      "max": 9,
-      "defaultValue": 0
-    },
-    { "name": "Driver Skill",
+    
+	{ "name": "Driver Skill",
       "code": "ds",
       "type": "radio",
       "choices": {
@@ -180,27 +155,18 @@ var config_data = `
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
+        "p": "Poor<br>",
         "a": "Average<br>",
-        "g": "Good<br>",
         "e": "Excellent<br>",
         "x": "Did not play defense"
       },
       "defaultValue": "x"
     },
-    { "name": "Speed Rating",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
-      },
-      "defaultValue":"3"
+	{ "name": "Did it remove any algae from reef?",
+      "code": "alg",
+      "type": "bool"
     },
-    { "name": "Died/Immobilized",
+    { "name": "Died/Immobilized <br>for significant amt of time<br>(ex: at least 15 seconds)",
       "code": "die",
       "type": "bool"
     },
@@ -216,16 +182,21 @@ var config_data = `
       "code": "da",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
+	{ "name": "Make good<br>alliance partner?",
+      "code": "gap",
+      "type": "radio",
+      "choices": {
+        "BW": "Bad/Worst<br>",
+        "BA": "Below Average<br>",
+        "AA": "Above Average<br>",
+        "EI": "Excellent/Ideal"
+      }
     },
-    { "name": "Comments",
+    { "name": "Comments(be concise)",
       "code": "co",
       "type": "text",
-      "size": 15,
-      "maxSize": 55
+      "size": 30,
+      "maxSize": 89
     }
   ]
 }`;
