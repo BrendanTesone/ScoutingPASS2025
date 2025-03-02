@@ -8,8 +8,8 @@ var config_data = `
     { "name": "First Name+Last Initial - ex: Ryan D",
       "code": "s",
       "type": "scouter",
-      "size": 5,
-      "maxSize": 5,
+      "size": 10,
+      "maxSize": 20,
       "required": "true"
     },
     { "name": "Event",
